@@ -231,20 +231,21 @@ export default function App() {
         </div>
       </section>
 
-      {/* 7. Contact Section */}
-      <footer id="contact" className="py-24 text-center border-t border-slate-800 bg-slate-950/50">
-        <h2 className="text-4xl font-bold text-white mb-4">Let's Connect</h2>
-        <p className="text-slate-500 mb-12 max-w-lg mx-auto">Feel free to reach out for collaborations or project inquiries.</p>
-        <div className="flex justify-center space-x-12 text-sm">
-          <a href="#" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">Email</a>
-          <a href="#" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">Facebook</a>
-          <a href="#" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">TikTok</a>
-          <a href="#" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">Telegram</a>
-        </div>
-        <div className="mt-20 text-[10px] text-slate-700 uppercase tracking-[0.2em]">
-          © 2026 Tadele Tadiwos • Wolaita Sodo University
-        </div>
-      </footer>
+   {/* 7. Contact Section */}
+<footer id="contact" className="py-24 text-center border-t border-slate-800 bg-slate-950/50">
+  <h2 className="text-4xl font-bold text-white mb-4">Let's Connect</h2>
+  <p className="text-slate-500 mb-12 max-w-lg mx-auto">Feel free to reach out for collaborations or project inquiries.</p>
+  <div className="flex justify-center space-x-12 text-sm">
+    <a href="mailto:tadiwostadele389@gmail.com" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">Email</a>
+    <a href="https://www.tiktok.com/@tediyo31" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">TikTok</a>
+    <a href="https://t.me/@Gamchu1" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">Telegram</a>
+    
+    <a href="#" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">Facebook</a>
+  </div>
+  <div className="mt-20 text-[10px] text-slate-700 uppercase tracking-[0.2em]">
+    © 2026 Tadele Tadiwos • Wolaita Sodo University
+  </div>
+</footer>
     </div>
   );
 }
