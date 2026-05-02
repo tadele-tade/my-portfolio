@@ -26,7 +26,6 @@ export default function App() {
   title: "Student Registration System",
   description: "A full-stack web application built with the MERN stack to manage student enrollments, profiles, and academic records efficiently.",
   technologies: ["MongoDB", "Express", "React", "Node.js"],
-  link: "#"
 },
     {
       title: "Social Media Growth & Strategy",
