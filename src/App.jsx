@@ -23,10 +23,11 @@ export default function App() {
 
   const projects = [
     {
-      title: "Student Registration System",
-      description: "A professional digital platform developed to automate student enrollment and academic record management for schools.",
-      tech: "PHP, MySQL, JavaScript"
-    },
+  title: "Student Registration System",
+  description: "A full-stack web application built with the MERN stack to manage student enrollments, profiles, and academic records efficiently.",
+  technologies: ["MongoDB", "Express", "React", "Node.js"],
+  link: "#"
+},
     {
       title: "Social Media Growth & Strategy",
       description: "Managing and scaling presence on TikTok and Facebook through data-driven content and engagement strategies.",
@@ -138,19 +139,27 @@ export default function App() {
       </header>
 
       {/* 3. About Me Section */}
-      <section id="about" className="py-20 bg-slate-800/30">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white mb-8 border-l-4 border-blue-500 pl-4 uppercase tracking-wider">About Me</h2>
-          <div className="space-y-6 text-lg leading-relaxed text-slate-400">
-            <p>
-              I am an Informatics student at <span className="text-blue-400 font-semibold">Wolaita Sodo University</span> with a passion for building digital solutions. My expertise spans from creating robust back-end systems like Student Registration platforms to designing high-end visual identities.
-            </p>
-            <p>
-              As a creative professional, I master **Adobe Illustrator and Photoshop** for graphic design, and **Premiere Pro** for video editing. I also specialize in **Social Media Management (TikTok & Facebook)**.
-            </p>
-          </div>
-        </div>
-      </section>
+<section id="about" className="py-20 bg-slate-800/30">
+  <div className="max-w-4xl mx-auto px-6">
+    <h2 className="text-3xl font-bold text-white mb-8 border-l-4 border-blue-500 pl-4 uppercase tracking-wider">About Me</h2>
+    <div className="space-y-6 text-lg leading-relaxed text-slate-400">
+      <p>
+        I am a dedicated **Informatics student at Wolaita Sodo University** with a deep-rooted passion for software engineering and digital creativity. 
+        My journey bridges the gap between complex backend systems and high-end visual design.
+      </p>
+      <p>
+        As a **Full-stack Developer**, I have successfully built real-world solutions, including a **Web-based Property Management System** for my university and automated registration platforms. 
+        I specialize in utilizing modern tools like **React, maren, PHP, and Python** to solve practical problems.
+      </p>
+      <p>"I am a proficient MERN Stack developer, experienced in building scalable web applications using MongoDB, Express.js, React, and Node.js."</p>
+      <p>
+        Beyond coding, I am a professional **Graphic Designer and Video Editor**. 
+        I leverage industry-standard software like **Adobe Illustrator, Photoshop, and Premiere Pro** to craft compelling brand identities and engaging social media content. 
+        My goal is to deliver seamless digital experiences that are both functional and visually stunning.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* 4. Video Portfolio Section - አዲስ ቦታ */}
       <section id="videos" className="py-20">
