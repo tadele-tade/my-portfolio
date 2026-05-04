@@ -85,9 +85,10 @@ export default function App() {
         {/* Full-width Background Image with Overlay */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
-            src="/download.jfif" // እዚህ ጋር የቴክኖሎጂ ምስሉን ስም በትክክል ጻፍ
+
+            src="/download.jfif" 
             alt="Technology Background"
-            className="w-full h-full object-cover object-center opacity-10" // ግልጽነቱን ለማስተካከል እዚህ ጋር መቀየር ትችላለህ
+            className="w-full h-full object-cover object-center opacity-70" 
           />
           {/* A gradient to fade out the background */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950/90 z-10"></div>
@@ -124,9 +125,13 @@ export default function App() {
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
                 Hello, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Tadele Tadiwos</span>
               </h2>
-              <h3 className="text-xl md:text-2xl text-slate-400 font-light mb-10">
-                A skilled developer and creative graphic designer focused on building functional, elegant digital solutions.
-              </h3>
+             <h3 className="text-xl md:text-2xl text-slate-300 font-light mb-10 max-w-3xl mx-auto leading-relaxed tracking-wide italic">
+  "I transform ideas into reality through <span className="text-blue-400 font-semibold not-italic">Full-Stack Development</span>, 
+  <span className="text-blue-400 font-semibold not-italic"> Professional Video Editing</span>, and 
+  <span className="text-blue-400 font-semibold not-italic"> High-End Graphic Design</span>. 
+  From building complex systems like <span className="border-b border-blue-500/50">Property Management</span> to crafting visual identities, 
+  I deliver solutions that matter."
+</h3>
               <div className="flex gap-6">
                 <a href="#projects" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold transition">View My Work</a>
                 <a href="#contact" className="border border-slate-700 hover:bg-slate-800 text-white px-8 py-3.5 rounded-xl font-bold transition">Contact Me</a>
@@ -170,7 +175,7 @@ export default function App() {
               <div className="aspect-video mb-4 overflow-hidden rounded-lg bg-black">
                 <iframe 
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/VIDEO_ID_HERE" 
+                  src="https://www.youtube.com/embed/8_QA9MXRX3A" 
                   title="TikTok Content Creation"
                   frameBorder="0"
                   allowFullScreen
@@ -185,7 +190,7 @@ export default function App() {
               <div className="aspect-video mb-4 overflow-hidden rounded-lg bg-black">
                 <iframe 
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/VIDEO_ID_HERE" 
+                  src="https://www.youtube.com/embed/L-Aqrm_T26g" 
                   title="Digital Marketing Assignment"
                   frameBorder="0"
                   allowFullScreen
@@ -239,17 +244,29 @@ export default function App() {
         </div>
       </section>
 
-   {/* 7. Contact Section */}
-<footer id="contact" className="py-24 text-center border-t border-slate-800 bg-slate-950/50">
+   {/* 7. Contact Section - Responsive Fixed */}
+<footer id="contact" className="py-24 text-center border-t border-slate-800 bg-slate-950/50 px-6">
   <h2 className="text-4xl font-bold text-white mb-4">Let's Connect</h2>
-  <p className="text-slate-500 mb-12 max-w-lg mx-auto">Feel free to reach out for collaborations or project inquiries.</p>
-  <div className="flex justify-center space-x-12 text-sm">
-    <a href="mailto:tadiwostadele389@gmail.com" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">Email</a>
-    <a href="https://www.tiktok.com/@tediyo31" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">TikTok</a>
-    <a href="https://t.me/@Gamchu1" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">Telegram</a>
-    
-    <a href="#" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest">Facebook</a>
+  <p className="text-slate-400 mb-12 max-w-lg mx-auto">
+    Feel free to reach out for collaborations or project inquiries.
+  </p>
+  
+  {/* በስልክ flex-col md:flex-row  ይሆናል */}
+  <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-sm">
+    <a href="mailto:tadiwostadele389@gmail.com" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
+      Email
+    </a>
+    <a href="https://www.tiktok.com/@tediyo31" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
+      TikTok
+    </a>
+    <a href="https://t.me/@Gamchu1" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
+      Telegram
+    </a>
+    <a href="https://facebook.com/yourusername" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
+      Facebook
+    </a>
   </div>
+
   <div className="mt-20 text-[10px] text-slate-700 uppercase tracking-[0.2em]">
     © 2026 Tadele Tadiwos • Wolaita Sodo University
   </div>
