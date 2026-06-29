@@ -23,10 +23,15 @@ export default function App() {
 
   const projects = [
     {
-  title: "Student Registration System",
-  description: "A full-stack web application built with the MERN stack to manage student enrollments, profiles, and academic records efficiently.",
-  technologies: "MongoDB, Express, React, Node.js"
-},
+      title: "NextGen Core Banking Portal",
+      description: "A secure, web-based banking system with a dual-control architecture (Teller-Manager verification queue) and an automated transaction reversion mechanism for safe fund handling.",
+      tech: "PHP (OOP/PDO), MySQL, HTML5, CSS3, JavaScript"
+    },
+    {
+      title: "Student Registration System",
+      description: "A full-stack web application built with the MERN stack to manage student enrollments, profiles, and academic records efficiently.",
+      tech: "MongoDB, Express, React, Node.js"
+    },
     {
       title: "Social Media Growth & Strategy",
       description: "Managing and scaling presence on TikTok and Facebook through data-driven content and engagement strategies.",
@@ -43,104 +48,47 @@ export default function App() {
       tech: "C++, OpenGL"
     },
     {
-  title: "AI Quiz Generator System",
-  description: "An automated assessment tool that uses Natural Language Processing to generate quizzes from raw text or documents.",
-  tech: "Python (Flask/FastAPI), OpenAI API, React"
-}
-  const BankingProject = () => {
-  return (
-    <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', marginBottom: '40px', borderLeft: '5px solid #0d47a1', textAlign: 'left', color: '#334155' }}>
-      <h2 style={{ color: '#0d47a1', fontSize: '26px', margin: '0 0 5px 0', fontFamily: '"Segoe UI", sans-serif' }}>NextGen Core Banking Portal</h2>
-      <p style={{ fontWeight: '600', color: '#64748b', fontSize: '14px', margin: '0 0 20px 0', textTransform: 'uppercase', letterSpacing: '1px' }}>Secure Dual-Control Banking Architecture</p>
-
-      <div style={{ display: 'flex', gap: '15px', marginBottom: '25px', flexWrap: 'wrap' }}>
-        <img src="/bank-manager.jpg" alt="Manager Dashboard Audit Trail" style={{ width: '100%', maxWidth: '100%', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 2px 5px rgba(0,0,0,0.05)' }} />
-      </div>
-
-      <div style={{ fontFamily: '"Segoe UI", sans-serif' }}>
-        <h3 style={{ color: '#1e293b', fontSize: '18px', marginTop: '0', borderBottom: '1px solid #f1f5f9', paddingBottom: '8px' }}>📝 Project Description</h3>
-        <p style={{ lineHeight: '1.6', fontSize: '15px', color: '#475569' }}>
-          A secure, high-performance web-based Core Banking System designed to simulate real-world financial operations. The system features a robust <strong>Dual-Control Core Logic</strong> (Teller-Manager verification architecture) for high-value transactions and an <strong>Automated Financial Reversion Mechanism</strong> to ensure absolute data integrity and prevent fund leaks during transaction rejections.
-        </p>
-
-        <h3 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', borderBottom: '1px solid #f1f5f9', paddingBottom: '8px' }}>🛠️ Tech Stack Used</h3>
-        <p style={{ fontSize: '15px', color: '#475569' }}>
-          <strong>Backend:</strong> PHP (OOP & PDO for SQL Injection Mitigation) <br />
-          <strong>Database:</strong> MySQL (Relational Schema with Live Audit Trails) <br />
-          <strong>Frontend:</strong> HTML5, Modern CSS3 (CSS Print Media API), Vanilla JavaScript
-        </p>
-
-        <h3 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', borderBottom: '1px solid #f1f5f9', paddingBottom: '8px' }}>🌟 Key Architectural Features</h3>
-        <ul style={{ lineHeight: '1.7', fontSize: '14px', color: '#475569', paddingLeft: '20px' }}>
-          <li style={{ marginBottom: '8px' }}><strong>Multi-Tier Access Control:</strong> Isolated and secure dashboard workflows tailored for Customers, Tellers, and Executive Managers.</li>
-          <li style={{ marginBottom: '8px' }}><strong>Dual-Control Queue Logic:</strong> Transactions exceeding <strong>100,000 ETB</strong> are automatically held in a staging queue, forcing strict managerial oversight before execution.</li>
-          <li style={{ marginBottom: '8px' }}><strong>Automated Reversion System:</strong> A fail-safe backend script that instantly refunds the exact amount to the customer's balance if the manager declines a transaction.</li>
-          <li style={{ marginBottom: '8px' }}><strong>Live Transaction Journaling & PDF:</strong> Dynamic audit logging equipped with precise CSS print rules for clean, single-click managerial paper-trail exports.</li>
-        </ul>
-      </div>
-    </div>
-  );
-};  
+      title: "AI Quiz Generator System",
+      description: "An automated assessment tool that uses Natural Language Processing to generate quizzes from raw text or documents.",
+      tech: "Python (Flask/FastAPI), OpenAI API, React"
+    }
   ];
 
   return (
-    <BankingProject />
     <div className="min-h-screen bg-slate-900 text-slate-200 font-sans selection:bg-blue-500/30">
       {/* 1. Header/Navbar */}
-      <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-blue-500 tracking-tighter">TADELE.DEV</h1>
-          <div className="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
-            <a href="#about" className="hover:text-blue-400 transition">About</a>
-            <a href="#videos" className="hover:text-blue-400 transition">Videos</a>
-            <a href="#skills" className="hover:text-blue-400 transition">Skills</a>
-            <a href="#projects" className="hover:text-blue-400 transition">Projects</a>
-            <a href="#contact" className="hover:text-blue-400 transition text-blue-500 border border-blue-500/50 px-4 py-1 rounded-full">Contact</a>
-          </div>
-        </div>
-      </nav>
-
-      {/* 1. Header/Navbar - Fixed to top and transparent */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/70 backdrop-blur-sm border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-white tracking-tight">TADELE<span className="text-blue-500">.DEV</span></h1>
           <div className="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
             <a href="#about" className="text-slate-300 hover:text-white transition">About</a>
+            <a href="#videos" className="text-slate-300 hover:text-white transition">Videos</a>
             <a href="#skills" className="text-slate-300 hover:text-white transition">Skills</a>
             <a href="#projects" className="text-slate-300 hover:text-white transition">Projects</a>
-            <a href="#contact" className="text-slate-300 hover:text-white transition">Contact</a>
           </div>
           <a href="#contact" className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-5 py-2.5 rounded-lg font-bold transition">Get In Touch</a>
         </div>
       </nav>
 
-      {/* 2. Hero Section - Updated with full-width background */}
+      {/* 2. Hero Section */}
       <header className="relative min-h-screen flex items-center pt-24">
-        {/* Full-width Background Image with Overlay */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
-
             src="/download.jfif" 
             alt="Technology Background"
             className="w-full h-full object-cover object-center opacity-70" 
           />
-          {/* A gradient to fade out the background */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950/90 z-10"></div>
-          {/* A soft glowing effect */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] z-20"></div>
         </div>
 
-        {/* Content Container - z-30 makes it sit above the background */}
         <div className="max-w-7xl mx-auto px-6 py-16 relative z-30">
           <div className="flex flex-col md:flex-row items-center gap-12">
             
             {/* Left Side: Profile Image */}
             <div className="md:w-1/3 flex justify-center md:justify-end">
               <div className="relative">
-                {/* A light blue ring behind the profile picture */}
                 <div className="absolute inset-0 bg-blue-500/15 rounded-full blur-xl transform scale-105"></div>
-                
-                {/* Profile Image - A clean circular design */}
                 <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-slate-700 shadow-[0_0_40px_rgba(59,130,246,0.3)] transform transition hover:scale-105 duration-300">
                   <img 
                     src="/des.jpg" 
@@ -159,13 +107,13 @@ export default function App() {
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
                 Hello, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Tadele Tadiwos</span>
               </h2>
-             <h3 className="text-xl md:text-2xl text-slate-300 font-light mb-10 max-w-3xl mx-auto leading-relaxed tracking-wide italic">
-  "I transform ideas into reality through <span className="text-blue-400 font-semibold not-italic">Full-Stack Development</span>, 
-  <span className="text-blue-400 font-semibold not-italic"> Professional Video Editing</span>, and 
-  <span className="text-blue-400 font-semibold not-italic"> High-End Graphic Design</span>. 
-  From building complex systems like <span className="border-b border-blue-500/50">Property Management</span> to crafting visual identities, 
-  I deliver solutions that matter."
-</h3>
+              <h3 className="text-xl md:text-2xl text-slate-300 font-light mb-10 max-w-3xl mx-auto leading-relaxed tracking-wide italic">
+                "I transform ideas into reality through <span className="text-blue-400 font-semibold not-italic">Full-Stack Development</span>, 
+                <span className="text-blue-400 font-semibold not-italic"> Professional Video Editing</span>, and 
+                <span className="text-blue-400 font-semibold not-italic"> High-End Graphic Design</span>. 
+                From building complex systems like <span className="border-b border-blue-500/50">Property Management</span> to crafting visual identities, 
+                I deliver solutions that matter."
+              </h3>
               <div className="flex gap-6">
                 <a href="#projects" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold transition">View My Work</a>
                 <a href="#contact" className="border border-slate-700 hover:bg-slate-800 text-white px-8 py-3.5 rounded-xl font-bold transition">Contact Me</a>
@@ -177,29 +125,28 @@ export default function App() {
       </header>
 
       {/* 3. About Me Section */}
-<section id="about" className="py-20 bg-slate-800/30">
-  <div className="max-w-4xl mx-auto px-6">
-    <h2 className="text-3xl font-bold text-white mb-8 border-l-4 border-blue-500 pl-4 uppercase tracking-wider">About Me</h2>
-    <div className="space-y-6 text-lg leading-relaxed text-slate-400">
-      <p>
-        I am a dedicated **Informatics student at Wolaita Sodo University** with a deep-rooted passion for software engineering and digital creativity. 
-        My journey bridges the gap between complex backend systems and high-end visual design.
-      </p>
-      <p>
-        As a **Full-stack Developer**, I have successfully built real-world solutions, including a **Web-based Property Management System** for my university and automated registration platforms. 
-        I specialize in utilizing modern tools like **React, maren, PHP, and Python** to solve practical problems.
-      </p>
-      <p>"I am a proficient MERN Stack developer, experienced in building scalable web applications using MongoDB, Express.js, React, and Node.js."</p>
-      <p>
-        Beyond coding, I am a professional **Graphic Designer and Video Editor**. 
-        I leverage industry-standard software like **Adobe Illustrator, Photoshop, and Premiere Pro** to craft compelling brand identities and engaging social media content. 
-        My goal is to deliver seamless digital experiences that are both functional and visually stunning.
-      </p>
-    </div>
-  </div>
-</section>
+      <section id="about" className="py-20 bg-slate-800/30">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-white mb-8 border-l-4 border-blue-500 pl-4 uppercase tracking-wider">About Me</h2>
+          <div className="space-y-6 text-lg leading-relaxed text-slate-400">
+            <p>
+              I am a dedicated **Informatics student at Wolaita Sodo University** with a deep-rooted passion for software engineering and digital creativity. 
+              My journey bridges the gap between complex backend systems and high-end visual design.
+            </p>
+            <p>
+              As a **Full-stack Developer**, I have successfully built real-world solutions, including a **Web-based Property Management System** for my university and automated registration platforms. 
+              I specialize in utilizing modern tools like **React, MERN stack, PHP, and Python** to solve practical problems.
+            </p>
+            <p>
+              Beyond coding, I am a professional **Graphic Designer and Video Editor**. 
+              I leverage industry-standard software like **Adobe Illustrator, Photoshop, and Premiere Pro** to craft compelling brand identities and engaging social media content. 
+              My goal is to deliver seamless digital experiences that are both functional and visually stunning.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      {/* 4. Video Portfolio Section - አዲስ ቦታ */}
+      {/* 4. Video Portfolio Section */}
       <section id="videos" className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-white mb-12 text-center uppercase tracking-wider">Video Editing Showcase</h2>
@@ -270,7 +217,7 @@ export default function App() {
                 <p className="text-slate-400 text-sm mb-8 leading-relaxed">{p.description}</p>
                 <div className="flex items-center gap-2">
                    <div className="h-px w-8 bg-blue-500"></div>
-                   <div className="text-xs font-mono text-blue-400 uppercase tracking-widest">{p.tech}</div>
+                   <div className="text-xs font-mono text-blue-400 uppercase tracking-widest">{p.tech || p.technologies}</div>
                 </div>
               </div>
             ))}
@@ -278,33 +225,32 @@ export default function App() {
         </div>
       </section>
 
-   {/* 7. Contact Section - Responsive Fixed */}
-<footer id="contact" className="py-24 text-center border-t border-slate-800 bg-slate-950/50 px-6">
-  <h2 className="text-4xl font-bold text-white mb-4">Let's Connect</h2>
-  <p className="text-slate-400 mb-12 max-w-lg mx-auto">
-    Feel free to reach out for collaborations or project inquiries.
-  </p>
-  
-  {/* በስልክ flex-col md:flex-row  ይሆናል */}
-  <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-sm">
-    <a href="mailto:tadiwostadele389@gmail.com" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
-      Email
-    </a>
-    <a href="https://www.tiktok.com/@tediyo31" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
-      TikTok
-    </a>
-    <a href="https://t.me/@Gamchu1" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
-      Telegram
-    </a>
-    <a href="https://facebook.com/yourusername" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
-      Facebook
-    </a>
-  </div>
+      {/* 7. Contact Section */}
+      <footer id="contact" className="py-24 text-center border-t border-slate-800 bg-slate-950/50 px-6">
+        <h2 className="text-4xl font-bold text-white mb-4">Let's Connect</h2>
+        <p className="text-slate-400 mb-12 max-w-lg mx-auto">
+          Feel free to reach out for collaborations or project inquiries.
+        </p>
+        
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-sm">
+          <a href="mailto:tadiwostadele389@gmail.com" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
+            Email
+          </a>
+          <a href="https://www.tiktok.com/@tediyo31" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
+            TikTok
+          </a>
+          <a href="https://t.me/@Gamchu1" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
+            Telegram
+          </a>
+          <a href="https://facebook.com/yourusername" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
+            Facebook
+          </a>
+        </div>
 
-  <div className="mt-20 text-[10px] text-slate-700 uppercase tracking-[0.2em]">
-    © 2026 Tadele Tadiwos • Wolaita Sodo University
-  </div>
-</footer>
+        <div className="mt-20 text-[10px] text-slate-700 uppercase tracking-[0.2em]">
+          © 2026 Tadele Tadiwos • Wolaita Sodo University
+        </div>
+      </footer>
     </div>
   );
 }
