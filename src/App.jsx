@@ -23,13 +23,11 @@ export default function App() {
 
   const projects = [
     {
-     {
       title: "NextGen Core Banking Portal",
       description: "A secure, web-based banking system with a dual-control architecture. To test the live system, use the demo credentials provided to log in as a Manager or Teller.",
       tech: "PHP (OOP/PDO), MySQL, HTML5, CSS3, JavaScript",
-      demoUrl: "https://your-bank-hosted-link.com",
-      credentials: "Demo - Role: Manager | Username: manager1 | Password: password123"
-    },
+      demoUrl: "https://nextgen-bank.infinityfreeapp.com",
+      credentials: "Role: Customer | Temporary Pass: password123"
     },
     {
       title: "Student Registration System",
@@ -143,118 +141,4 @@ export default function App() {
             </p>
             <p>
               Beyond coding, I am a professional **Graphic Designer and Video Editor**. 
-              I leverage industry-standard software like **Adobe Illustrator, Photoshop, and Premiere Pro** to craft compelling brand identities and engaging social media content. 
-              My goal is to deliver seamless digital experiences that are both functional and visually stunning.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Video Portfolio Section */}
-      <section id="videos" className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center uppercase tracking-wider">Video Editing Showcase</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Video 1 */}
-            <div className="bg-slate-800/50 p-4 rounded-2xl border border-slate-700 group hover:border-blue-500/50 transition-all">
-              <div className="aspect-video mb-4 overflow-hidden rounded-lg bg-black">
-                <iframe 
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/8_QA9MXRX3A" 
-                  title="TikTok Content Creation"
-                  frameBorder="0"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <h4 className="text-white font-bold">TikTok Content Creation</h4>
-              <p className="text-slate-400 text-sm">Creative short-form editing with Premiere Pro & CapCut</p>
-            </div>
-
-            {/* Video 2 */}
-            <div className="bg-slate-800/50 p-4 rounded-2xl border border-slate-700 group hover:border-blue-500/50 transition-all">
-              <div className="aspect-video mb-4 overflow-hidden rounded-lg bg-black">
-                <iframe 
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/L-Aqrm_T26g" 
-                  title="Digital Marketing Assignment"
-                  frameBorder="0"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <h4 className="text-white font-bold">Digital Marketing Content</h4>
-              <p className="text-slate-400 text-sm">Professional video for Facebook ad campaigns</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Skills & Tools Section */}
-      <section id="skills" className="py-20 bg-slate-800/30">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-16 uppercase tracking-wider">Expertise & Tools</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-slate-800/20 p-8 rounded-2xl border border-slate-800">
-              <h4 className="text-blue-400 font-bold mb-8 uppercase tracking-widest text-sm">Professional Skills</h4>
-              <div className="flex flex-wrap justify-center gap-3">
-                {skills.map(s => <span key={s} className="px-4 py-2 bg-slate-900 rounded-lg border border-slate-700 text-sm">{s}</span>)}
-              </div>
-            </div>
-            <div className="bg-slate-800/20 p-8 rounded-2xl border border-slate-800">
-              <h4 className="text-blue-400 font-bold mb-8 uppercase tracking-widest text-sm">Software Tools</h4>
-              <div className="flex flex-wrap justify-center gap-3">
-                {tools.map(t => <span key={t} className="px-4 py-2 bg-slate-900 rounded-lg border border-slate-700 text-sm">{t}</span>)}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Projects Section */}
-      <section id="projects" className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white mb-16 text-center uppercase tracking-wider">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((p, i) => (
-              <div key={i} className="bg-slate-900 p-10 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition-all group relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl font-bold group-hover:opacity-100 group-hover:text-blue-500 transition-all">0{i+1}</div>
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">{p.title}</h3>
-                <p className="text-slate-400 text-sm mb-8 leading-relaxed">{p.description}</p>
-                <div className="flex items-center gap-2">
-                   <div className="h-px w-8 bg-blue-500"></div>
-                   <div className="text-xs font-mono text-blue-400 uppercase tracking-widest">{p.tech || p.technologies}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Contact Section */}
-      <footer id="contact" className="py-24 text-center border-t border-slate-800 bg-slate-950/50 px-6">
-        <h2 className="text-4xl font-bold text-white mb-4">Let's Connect</h2>
-        <p className="text-slate-400 mb-12 max-w-lg mx-auto">
-          Feel free to reach out for collaborations or project inquiries.
-        </p>
-        
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-sm">
-          <a href="mailto:tadiwostadele389@gmail.com" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
-            Email
-          </a>
-          <a href="https://www.tiktok.com/@tediyo31" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
-            TikTok
-          </a>
-          <a href="https://t.me/@Gamchu1" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
-            Telegram
-          </a>
-          <a href="https://facebook.com/yourusername" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 transition uppercase tracking-widest font-medium">
-            Facebook
-          </a>
-        </div>
-
-        <div className="mt-20 text-[10px] text-slate-700 uppercase tracking-[0.2em]">
-          © 2026 Tadele Tadiwos • Wolaita Sodo University
-        </div>
-      </footer>
-    </div>
-  );
-}
+              I leverage industry-standard software like **Adobe Illustrator, Photoshop, and Premiere Pro**
