@@ -23,9 +23,13 @@ export default function App() {
 
   const projects = [
     {
+     {
       title: "NextGen Core Banking Portal",
-      description: "A secure, web-based banking system with a dual-control architecture (Teller-Manager verification queue) and an automated transaction reversion mechanism for safe fund handling.",
-      tech: "PHP (OOP/PDO), MySQL, HTML5, CSS3, JavaScript"
+      description: "A secure, web-based banking system with a dual-control architecture. To test the live system, use the demo credentials provided to log in as a Manager or Teller.",
+      tech: "PHP (OOP/PDO), MySQL, HTML5, CSS3, JavaScript",
+      demoUrl: "https://your-bank-hosted-link.com",
+      credentials: "Demo - Role: Manager | Username: manager1 | Password: password123"
+    },
     },
     {
       title: "Student Registration System",
