@@ -47,10 +47,44 @@ export default function App() {
   description: "An automated assessment tool that uses Natural Language Processing to generate quizzes from raw text or documents.",
   tech: "Python (Flask/FastAPI), OpenAI API, React"
 }
-    
+  const BankingProject = () => {
+  return (
+    <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', marginBottom: '40px', borderLeft: '5px solid #0d47a1', textAlign: 'left', color: '#334155' }}>
+      <h2 style={{ color: '#0d47a1', fontSize: '26px', margin: '0 0 5px 0', fontFamily: '"Segoe UI", sans-serif' }}>NextGen Core Banking Portal</h2>
+      <p style={{ fontWeight: '600', color: '#64748b', fontSize: '14px', margin: '0 0 20px 0', textTransform: 'uppercase', letterSpacing: '1px' }}>Secure Dual-Control Banking Architecture</p>
+
+      <div style={{ display: 'flex', gap: '15px', marginBottom: '25px', flexWrap: 'wrap' }}>
+        <img src="/bank-manager.jpg" alt="Manager Dashboard Audit Trail" style={{ width: '100%', maxWidth: '100%', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 2px 5px rgba(0,0,0,0.05)' }} />
+      </div>
+
+      <div style={{ fontFamily: '"Segoe UI", sans-serif' }}>
+        <h3 style={{ color: '#1e293b', fontSize: '18px', marginTop: '0', borderBottom: '1px solid #f1f5f9', paddingBottom: '8px' }}>📝 Project Description</h3>
+        <p style={{ lineHeight: '1.6', fontSize: '15px', color: '#475569' }}>
+          A secure, high-performance web-based Core Banking System designed to simulate real-world financial operations. The system features a robust <strong>Dual-Control Core Logic</strong> (Teller-Manager verification architecture) for high-value transactions and an <strong>Automated Financial Reversion Mechanism</strong> to ensure absolute data integrity and prevent fund leaks during transaction rejections.
+        </p>
+
+        <h3 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', borderBottom: '1px solid #f1f5f9', paddingBottom: '8px' }}>🛠️ Tech Stack Used</h3>
+        <p style={{ fontSize: '15px', color: '#475569' }}>
+          <strong>Backend:</strong> PHP (OOP & PDO for SQL Injection Mitigation) <br />
+          <strong>Database:</strong> MySQL (Relational Schema with Live Audit Trails) <br />
+          <strong>Frontend:</strong> HTML5, Modern CSS3 (CSS Print Media API), Vanilla JavaScript
+        </p>
+
+        <h3 style={{ color: '#1e293b', fontSize: '18px', marginTop: '20px', borderBottom: '1px solid #f1f5f9', paddingBottom: '8px' }}>🌟 Key Architectural Features</h3>
+        <ul style={{ lineHeight: '1.7', fontSize: '14px', color: '#475569', paddingLeft: '20px' }}>
+          <li style={{ marginBottom: '8px' }}><strong>Multi-Tier Access Control:</strong> Isolated and secure dashboard workflows tailored for Customers, Tellers, and Executive Managers.</li>
+          <li style={{ marginBottom: '8px' }}><strong>Dual-Control Queue Logic:</strong> Transactions exceeding <strong>100,000 ETB</strong> are automatically held in a staging queue, forcing strict managerial oversight before execution.</li>
+          <li style={{ marginBottom: '8px' }}><strong>Automated Reversion System:</strong> A fail-safe backend script that instantly refunds the exact amount to the customer's balance if the manager declines a transaction.</li>
+          <li style={{ marginBottom: '8px' }}><strong>Live Transaction Journaling & PDF:</strong> Dynamic audit logging equipped with precise CSS print rules for clean, single-click managerial paper-trail exports.</li>
+        </ul>
+      </div>
+    </div>
+  );
+};  
   ];
 
   return (
+    <BankingProject />
     <div className="min-h-screen bg-slate-900 text-slate-200 font-sans selection:bg-blue-500/30">
       {/* 1. Header/Navbar */}
       <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
