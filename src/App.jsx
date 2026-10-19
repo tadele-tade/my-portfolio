@@ -37,7 +37,7 @@ export default function App() {
       title: "NextGen Core Banking Portal (PERN)",
       description: "A secure full-stack banking portal built with PostgreSQL, Express, React, and Node.js. Features JWT-based authentication, transaction history, and role-based access control.",
       tech: "React, Node.js, Express, PostgreSQL, Tailwind CSS",
-      demoUrl: "https://nextgen-bank.infinityfreeapp.com",
+      demoUrl: "https://nextgen-banking.bytade.com",
       credentials: "Role: Customer | Pass: password123"
     },
     {
