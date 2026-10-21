@@ -1,36 +1,71 @@
+:root {
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-bg: rgba(59, 130, 246, 0.1);
+  --accent-border: rgba(59, 130, 246, 0.4);
+  --border: rgba(255, 255, 255, 0.1);
+  --text-h: #f8fafc;
+  --text-muted: #94a3b8;
+  --social-bg: rgba(255, 255, 255, 0.05);
+  --shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(15, 23, 42, 0.65);
+}
+
+/* 1. Counter Button Style */
 .counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
   color: var(--accent);
   background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
+  border: 1.5px solid rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 24px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 
   &:hover {
-    border-color: var(--accent-border);
+    border-color: var(--accent);
+    background: rgba(59, 130, 246, 0.18);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
   }
+
+  &:active {
+    transform: translateY(0);
+  }
+
   &:focus-visible {
     outline: 2px solid var(--accent);
-    outline-offset: 2px;
+    outline-offset: 3px;
   }
 }
 
+/* 2. Hero Stack/Layer Animation Style */
 .hero {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .base,
   .framework,
   .vite {
     inset-inline: 0;
     margin: 0 auto;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .base {
     width: 170px;
     position: relative;
     z-index: 0;
+    animation: floatBase 6s ease-in-out infinite;
   }
 
   .framework,
@@ -42,8 +77,8 @@
     z-index: 1;
     top: 34px;
     height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4);
+    animation: floatFramework 5s ease-in-out infinite alternate;
   }
 
   .vite {
@@ -51,11 +86,21 @@
     top: 107px;
     height: 26px;
     width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8);
+    animation: floatVite 4s ease-in-out infinite alternate;
+  }
+
+  &:hover {
+    .framework {
+      transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.55) translateY(-6px);
+    }
+    .vite {
+      transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.9) translateY(6px);
+    }
   }
 }
 
+/* 3. Center Wrapper Style */
 #center {
   display: flex;
   flex-direction: column;
@@ -63,6 +108,7 @@
   place-content: center;
   place-items: center;
   flex-grow: 1;
+  text-align: center;
 
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
@@ -70,23 +116,33 @@
   }
 }
 
+/* 4. Next Steps Section */
 #next-steps {
   display: flex;
   border-top: 1px solid var(--border);
   text-align: left;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
 
   & > div {
     flex: 1 1 0;
-    padding: 32px;
+    padding: 36px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
     @media (max-width: 1024px) {
-      padding: 24px 20px;
+      padding: 28px 20px;
     }
   }
 
   .icon {
     margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.4));
   }
 
   @media (max-width: 1024px) {
@@ -104,11 +160,12 @@
   }
 }
 
+/* 5. Buttons and Social Links */
 #next-steps ul {
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 8px;
+  gap: 10px;
   margin: 32px 0 0;
 
   .logo {
@@ -117,32 +174,45 @@
 
   a {
     color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
     background: var(--social-bg);
+    border: 1px solid var(--border);
     display: flex;
-    padding: 6px 12px;
+    padding: 8px 14px;
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    transition: box-shadow 0.3s;
+    transition: all 0.25s ease;
 
     &:hover {
       box-shadow: var(--shadow);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      color: #ffffff;
     }
+
     .button-icon {
       height: 18px;
       width: 18px;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+
+    &:hover .button-icon {
+      opacity: 1;
     }
   }
 
   @media (max-width: 1024px) {
-    margin-top: 20px;
+    margin-top: 24px;
     flex-wrap: wrap;
     justify-content: center;
 
     li {
-      flex: 1 1 calc(50% - 8px);
+      flex: 1 1 calc(50% - 10px);
     }
 
     a {
@@ -153,9 +223,11 @@
   }
 }
 
+/* 6. Spacer & Decorative Ticks */
 #spacer {
   height: 88px;
   border-top: 1px solid var(--border);
+
   @media (max-width: 1024px) {
     height: 48px;
   }
@@ -169,16 +241,34 @@
   &::after {
     content: '';
     position: absolute;
-    top: -4.5px;
+    top: -5px;
     border: 5px solid transparent;
+    transition: border-color 0.3s;
   }
 
   &::before {
-    left: 0;
-    border-left-color: var(--border);
+    left: -1px;
+    border-left-color: var(--accent);
   }
+
   &::after {
-    right: 0;
-    border-right-color: var(--border);
+    right: -1px;
+    border-right-color: var(--accent);
   }
+}
+
+/* 7. Subtle Animations for Floating Elements */
+@keyframes floatBase {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes floatFramework {
+  0% { transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4) translateY(0); }
+  100% { transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4) translateY(-8px); }
+}
+
+@keyframes floatVite {
+  0% { transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8) translateY(0); }
+  100% { transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8) translateY(6px); }
 }
