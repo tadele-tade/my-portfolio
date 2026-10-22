@@ -120,7 +120,7 @@ export default function App() {
       description: "A secure full-stack banking portal built with PHP and SQL for strict ACID compliance and transaction integrity. Features secure authentication, balance transfers, real-time transaction history logs, and granular access controls for bank personnel.",
       architecture: ["React / HTML5", "PHP REST API", "MySQL / PostgreSQL", "Tailwind CSS"],
       tech: ["PHP", "MySQL / PostgreSQL", "JavaScript", "Tailwind CSS"],
-      demoUrl: "https://nextgen-banking.bytade.com",
+      demoUrl: "https://nextgen-bank.infinityfreeapp.com",
       credentials: "Role: Customer | Pass: password123",
       highlights: [
         "ACID-compliant SQL database structure with relational foreign keys",
