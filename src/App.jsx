@@ -94,7 +94,7 @@ export default function App() {
     ]
   };
 
-  // Portfolio Projects Data
+ // Portfolio Projects Data
   const projects = [
     {
       id: "student-mern",
@@ -158,6 +158,22 @@ export default function App() {
         "Automated question generation based on difficulty level & domain",
         "Instant score analytics and answer explanations",
         "Responsive, high-engagement quiz interface with timer controls"
+      ]
+    },
+    {
+      id: "ecommerce-pern",
+      title: "Full-Stack E-Commerce Platform",
+      category: "PERN",
+      tagline: "Scalable Relational Online Store & Checkout System",
+      description: "An advanced e-commerce web application engineered using the PERN stack (PostgreSQL, Express.js, React, Node.js). Features secure user authentication, dynamic product catalog management, shopping cart workflows, relational order processing, and transaction safety backed by PostgreSQL ACID compliance.",
+      architecture: ["React", "Node.js/Express", "PostgreSQL", "Tailwind CSS", "JWT Auth"],
+      tech: ["React", "Node.js", "Express", "PostgreSQL", "Tailwind CSS"],
+      demoUrl: "https://github.com/tadele-tade/my-portfolio.git",
+      credentials: "Role: Customer / Admin Dashboard Available",
+      highlights: [
+        "Relational database schema handling products, categories, users, and orders with foreign keys",
+        "Secure user sessions and authentication using JSON Web Tokens (JWT) and bcrypt",
+        "Dynamic cart state management and real-time stock updating upon checkout"
       ]
     }
   ];
