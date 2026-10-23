@@ -18,7 +18,7 @@ import {
   Copy, 
   Check, 
   GraduationCap,
-  Code as Github // <-- 'Github' የሚለውን ስም ከሌላ ንጹህ አዶ ጋር alias በማድረግ ስህተቱን ያስወግደዋል
+  Code as Github
 } from 'lucide-react';
 
 export default function App() {
@@ -99,6 +99,7 @@ export default function App() {
     {
       id: "student-mern",
       title: "Student Registration System",
+     image: "/student-mern.webp",
       category: "MERN",
       tagline: "Comprehensive Academic Management Platform",
       description: "A robust full-stack enterprise portal built using the MERN stack (MongoDB, Express, React, Node.js). Designed for educational institutions to streamline student enrollment workflows, automate class assignments, track academic transcripts, and deliver real-time administrative reporting.",
@@ -111,7 +112,9 @@ export default function App() {
         "Automated PDF grade report generator and export system",
         "MongoDB Schema optimization for fast querying of historical records"
       ]
+      
     },
+    
     {
       id: "banking-php",
       title: "NextGen Core Banking Portal",
@@ -316,7 +319,7 @@ export default function App() {
                 </div>
                 <div className="flex items-center gap-2 bg-slate-900/80 px-3.5 py-2 rounded-xl border border-slate-800">
                   <Code2 className="w-4 h-4 text-cyan-400" />
-                  <span>PHP & JS Web Engineer</span>
+                  <span>PHP & FULLY-JS Web Engineer</span>
                 </div>
               </div>
 
@@ -412,7 +415,7 @@ export default function App() {
                       <span className="font-mono text-slate-200">CS @ WSU</span>
                     </div>
                     <div className="flex justify-between items-center text-xs">
-                      <span className="text-slate-400">Availability</span>
+                      <span className="text-slate-400">My Services</span>
                       <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                         Open to Roles
@@ -434,7 +437,7 @@ export default function App() {
           
           <div className="flex items-center gap-3 mb-6">
             <User className="w-5 h-5 text-blue-400" />
-            <h2 className="text-xs uppercase tracking-widest font-bold text-blue-400">Engineering Philosophy</h2>
+            <h2 className="text-xs uppercase tracking-widest font-bold text-blue-400">Development Approach</h2>
           </div>
 
           <h3 className="text-3xl sm:text-4xl font-extrabold text-white mb-8 leading-tight">
@@ -523,6 +526,7 @@ export default function App() {
                 </div>
               </div>
             </div>
+            
 
             {/* MERN Card */}
             <div className="relative group bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 p-8 rounded-3xl transition duration-300 shadow-xl overflow-hidden">
@@ -555,6 +559,7 @@ export default function App() {
                 </div>
               </div>
             </div>
+
 
             {/* PERN Card */}
             <div className="relative group bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 p-8 rounded-3xl transition duration-300 shadow-xl overflow-hidden">
@@ -597,7 +602,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-6">
           
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400">Technical Arsenal</h2>
+            <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400">CORE EXPERTISE</h2>
             <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
               Skills & Ecosystem Inspector
             </h3>
