@@ -286,376 +286,434 @@ export default function App() {
         )}
       </nav>
 
-      {/* 2. Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-28 pb-20 px-6">
-        <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Main Text Content */}
-            <div className="lg:col-span-7 space-y-6 text-left">
-              
-              {/* Special Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wider uppercase">
-                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-                Full-Stack Developer
-              </div>
+ {/* 2. Hero Section */}
+<section className="relative min-h-screen flex items-center pt-28 pb-20 px-6 overflow-hidden bg-[#070b14]">
+  
+  {/* 🌟 1. Background Mesh Grid & Ambient Glows (ጀርባውን ሕይወት የሚሰጡ ብርሃኖች) */}
+  <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+  {/* 🌟 A. Background Image */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 filter blur-[1px]"
+    style={{
+      backgroundImage: `url('/profile.jfif')`,
+    }}
+  />
+  {/* ከጀርባ የሚያበሩ ወጋገኖች (Glowing Orbs) */}
+  <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] pointer-events-none" />
+  <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none" />
 
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-white">
-                Hello, I'm <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-300">
-                  Tadele Tadiwos
+  {/* 🌟 2. Main Hero Content */}
+  <div className="max-w-7xl mx-auto w-full relative z-10">
+    <div className="grid lg:grid-cols-12 gap-12 items-center">
+      
+      {/* የግራ በኩል ጽሑፎች (Left Side Text) */}
+      <div className="lg:col-span-7 space-y-6 text-left">
+        
+        {/* Special Badge */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wider uppercase backdrop-blur-md">
+          <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+          Full-Stack Developer
+        </div>
+
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-white">
+          Hello, I'm <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-300">
+            Tadele Tadiwos
+          </span>
+        </h1>
+
+        <p className="text-slate-300 text-lg sm:text-xl font-light leading-relaxed max-w-2xl">
+          Passionate engineer focused on architecting high-performance web applications using modern <span className="text-blue-400 font-semibold">PHP & SQL</span> ecosystems alongside <span className="text-cyan-400 font-semibold">MERN</span> and <span className="text-indigo-400 font-semibold">PERN</span> full-stack architecture.
+        </p>
+
+        {/* Quick Info Badges */}
+        <div className="flex flex-wrap gap-4 text-xs font-mono text-slate-400 pt-2">
+          <div className="flex items-center gap-2 bg-slate-900/80 px-3.5 py-2 rounded-xl border border-slate-800 backdrop-blur-md">
+            <GraduationCap className="w-4 h-4 text-blue-400" />
+            <span>Wolaita Sodo University</span>
+          </div>
+          <div className="flex items-center gap-2 bg-slate-900/80 px-3.5 py-2 rounded-xl border border-slate-800 backdrop-blur-md">
+            <Code2 className="w-4 h-4 text-cyan-400" />
+            <span>PHP & FULLY-JS Web Engineer</span>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-wrap items-center gap-4 pt-4">
+          <a 
+            href="#projects" 
+            className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-7 py-3.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center gap-2 text-sm"
+          >
+            Explore Work
+            <ChevronRight className="w-4 h-4" />
+          </a>
+          <a 
+            href="#contact" 
+            className="bg-slate-900/90 hover:bg-slate-800 border border-slate-800 text-slate-200 font-bold px-7 py-3.5 rounded-xl transition text-sm backdrop-blur-md"
+          >
+            Contact Me
+          </a>
+        </div>
+
+        {/* Quick Social Links */}
+        <div className="flex items-center gap-5 pt-6 text-slate-400">
+          <a 
+            href="https://github.com/tadele-tade" 
+            target="_blank" 
+            rel="noreferrer"
+            className="hover:text-blue-400 transition p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 backdrop-blur-md"
+            title="GitHub Profile"
+          >
+            <Code2 className="w-5 h-5 text-blue-400"/>
+          </a>
+          <a 
+            href="https://t.me/Gamchu1" 
+            target="_blank" 
+            rel="noreferrer"
+            className="hover:text-blue-400 transition p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 backdrop-blur-md"
+            title="Telegram Profile"
+          >
+            <Send className="w-5 h-5" />
+          </a>
+          <a 
+            href="mailto:tadiwostadele389@gmail.com"
+            className="hover:text-blue-400 transition p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 backdrop-blur-md"
+            title="Direct Email"
+          >
+            <Mail className="w-5 h-5" />
+          </a>
+        </div>
+
+      </div>
+
+      {/* 🌟 3. በቀኝ በኩል ያለዉ Profile Image (Rectangle Box የሌለዉ እና በ Smooth Glow የታጀበ) */}
+      <div className="lg:col-span-5 flex justify-center items-center">
+        <div className="relative group max-w-sm w-full">
+          
+          {/* Ambient Glow behind image */}
+          <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-600 via-cyan-400 to-indigo-500 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-500"></div>
+
+          {/* Profile Container (ምንም ነጭ ሳጥን የሌለው) */}
+          <div className="relative overflow-hidden rounded-3xl border border-slate-700/60 shadow-2xl bg-slate-950/50 backdrop-blur-md">
+            <img 
+              src="/head.png" 
+              alt="Tadele Tadiwos" 
+              className="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.parentElement.classList.add('bg-gradient-to-br', 'from-blue-900', 'to-slate-900', 'flex', 'items-center', 'justify-center', 'p-12');
+                e.target.parentElement.innerHTML = `<div class="text-center"><span class="text-6xl font-black text-blue-400">TT</span><p class="text-xs text-slate-400 mt-2 font-mono">Tadele Tadiwos</p></div>`;
+              }}
+            />
+            {/* Smooth Fade to Bottom Background */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent opacity-70" />
+          </div>
+
+          {/* Floating Open to Roles Badge */}
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-slate-900/95 border border-slate-800 rounded-full shadow-xl backdrop-blur-md flex items-center gap-2 whitespace-nowrap text-xs text-slate-300">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+            <span className="font-mono text-emerald-400 font-semibold">Open to Roles</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{/* 3. About Section */}
+<section id="about" className="py-24 bg-slate-950 relative border-t border-b border-slate-800/50 overflow-hidden">
+  
+  {/* 🌟 1. Subtle Background Grid & Glow */}
+  <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b10_1px,transparent_1px),linear-gradient(to_bottom,#1e293b10_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+
+  <div className="max-w-6xl mx-auto px-6 relative z-10">
+    
+    <div className="flex items-center gap-3 mb-6">
+      <User className="w-5 h-5 text-blue-400" />
+      <h2 className="text-xs uppercase tracking-widest font-bold text-blue-400">Development Approach</h2>
+    </div>
+
+    <h3 className="text-3xl sm:text-4xl font-extrabold text-white mb-12 leading-tight">
+      Building Robust, High-Performance Applications across Modern PHP and JavaScript Ecosystems.
+    </h3>
+
+    <div className="grid md:grid-cols-3 gap-8 text-slate-300 leading-relaxed text-sm">
+      
+     {/* Card 1: Academic Foundation */}
+<div className="relative rounded-3xl overflow-hidden border border-slate-800 hover:border-slate-700 transition p-8 group flex flex-col justify-between min-h-[320px] shadow-2xl">
+  
+  {/* 🌟 የጀርባ ፎቶ (Background Image) */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat transition duration-700 group-hover:scale-105 opacity-100"
+    style={{ backgroundImage: `url('/images of  door logo.jpeg')` }} 
+  />
+  
+  {/* Dark Overlay ጽሑፉ በግልጽ እንዲነበብ */}
+  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-slate-950/70" />
+
+  <div className="relative z-10">
+    <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-6 backdrop-blur-md">
+      <Layout className="w-5 h-5" />
+    </div>
+    <h4 className="font-bold text-white mb-2 text-lg">Academic Foundation</h4>
+    <p className="text-slate-300 text-xs leading-relaxed">
+      As a Computer Science student at <strong>Wolaita Sodo University</strong>, I combine foundational CS concepts—data structures, software patterns, and system design—with modern web engineering.
+    </p>
+  </div>
+</div>
+
+      {/* Card 2: PHP & Relational SQL */}
+      <div className="relative rounded-3xl overflow-hidden border border-slate-800 hover:border-slate-700 transition p-8 group flex flex-col justify-between min-h-[320px] shadow-2xl">
+        {/* የጀርባ ፎቶ (Background Image) - ለምሳሌ የዳታቤዝ ስኬማ ፎቶ */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105 opacity-100"
+          style={{ backgroundImage: `url('/php.jpg')` }} 
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-slate-950/70" />
+
+        <div className="relative z-10">
+          <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-6 backdrop-blur-md">
+            <Server className="w-5 h-5" />
+          </div>
+          <h4 className="font-bold text-white mb-2 text-lg">PHP & Relational SQL</h4>
+          <p className="text-slate-300 text-xs leading-relaxed">
+            Specializing in secure backend architectures using <strong>PHP</strong>, <strong>MySQL</strong>, and <strong>PostgreSQL</strong> with focus on prepared statements, transaction integrity, and REST APIs.
+          </p>
+        </div>
+      </div>
+
+      {/* Card 3: Reactive Frontend & MERN */}
+      <div className="relative rounded-3xl overflow-hidden border border-slate-800 hover:border-slate-700 transition p-8 group flex flex-col justify-between min-h-[320px] shadow-2xl">
+        {/* የጀርባ ፎቶ (Background Image) - ለምሳሌ የኮዲንግ/ዳሽቦርድ ፎቶ */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105 opacity-100"
+          style={{ backgroundImage: `url('student-mern.webp.webp')` }} 
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-slate-950/70" />
+
+        <div className="relative z-10">
+          <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-6 backdrop-blur-md">
+            <Cpu className="w-5 h-5" />
+          </div>
+          <h4 className="font-bold text-white mb-2 text-lg">Reactive Frontend & MERN</h4>
+          <p className="text-slate-300 text-xs leading-relaxed">
+            Crafting reactive web application interfaces using <strong>React.js and Tailwind CSS</strong>, along with full-stack MERN stack implementations.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+     {/* 4. Core Stacks Breakdown Section */}
+<section id="stack" className="py-24 relative overflow-hidden bg-slate-950">
+  
+ {/* 🌟 1. ሙያዊ የጀርባ ፎቶ ከሙሉ ግልጽነት (Opacity 100) ጋር */}
+<div 
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100 pointer-events-none"
+  style={{ backgroundImage: `url('/teck.jfif')` }} 
+/>
+
+{/* 🌟 2. ፎቶው በደማቅ እንዲታይ ጥቁሩ ሽፋን በጣም ቀለል ተደርጓል (opacity-40) */}
+<div className="absolute inset-0 bg-slate-950/40 pointer-events-none" />
+
+{/* 🌟 3. Ambient Blue Glow */}
+<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[140px] pointer-events-none" />
+
+  <div className="max-w-6xl mx-auto px-6 relative z-10">
+    
+    <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400">Core Stacks</h2>
+      <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
+        Full-Stack Architecture
+      </h3>
+      <p className="text-slate-300 text-sm">
+        Extensive experience with PHP, Relational SQL, and Modern JavaScript stacks.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      
+      {/* PHP & SQL Card */}
+      <div className="relative group bg-slate-900/90 backdrop-blur-md border border-slate-800 hover:border-indigo-500/50 p-8 rounded-3xl transition duration-300 shadow-2xl overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition"></div>
+        
+        <div className="text-indigo-400 text-xs font-mono font-semibold uppercase tracking-widest mb-2">
+          Relational / Enterprise
+        </div>
+        <h4 className="text-3xl font-extrabold text-white mb-4">PHP & SQL</h4>
+        <p className="text-slate-300 text-sm leading-relaxed mb-6">
+          Engineered for strict data compliance, financial applications, transaction isolation, and secure relational database architectures.
+        </p>
+
+        <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-indigo-400 font-bold block mb-1">P</span>
+            PHP 8+ Backend
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-indigo-400 font-bold block mb-1">M</span>
+            MySQL / Postgres
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-indigo-400 font-bold block mb-1">R</span>
+            React Frontend
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-indigo-400 font-bold block mb-1">A</span>
+            RESTful APIs
+          </div>
+        </div>
+      </div>
+      
+
+      {/* MERN Card */}
+      <div className="relative group bg-slate-900/90 backdrop-blur-md border border-slate-800 hover:border-blue-500/50 p-8 rounded-3xl transition duration-300 shadow-2xl overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition"></div>
+        
+        <div className="text-blue-400 text-xs font-mono font-semibold uppercase tracking-widest mb-2">
+          Primary NoSQL Stack
+        </div>
+        <h4 className="text-3xl font-extrabold text-white mb-4">MERN Stack</h4>
+        <p className="text-slate-300 text-sm leading-relaxed mb-6">
+          Ideal for modern, highly dynamic web applications requiring continuous scaling, reactive component architecture, and document-based flexibility.
+        </p>
+
+        <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-blue-400 font-bold block mb-1">M</span>
+            MongoDB Atlas
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-blue-400 font-bold block mb-1">E</span>
+            Express.js Router
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-blue-400 font-bold block mb-1">R</span>
+            React.js Client
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-blue-400 font-bold block mb-1">N</span>
+            Node.js Server
+          </div>
+        </div>
+      </div>
+
+
+      {/* PERN Card */}
+      <div className="relative group bg-slate-900/90 backdrop-blur-md border border-slate-800 hover:border-cyan-500/50 p-8 rounded-3xl transition duration-300 shadow-2xl overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition"></div>
+
+        <div className="text-cyan-400 text-xs font-mono font-semibold uppercase tracking-widest mb-2">
+          Node Relational Stack
+        </div>
+        <h4 className="text-3xl font-extrabold text-white mb-4">PERN Stack</h4>
+        <p className="text-slate-300 text-sm leading-relaxed mb-6">
+          Designed for enterprise platforms requiring strict SQL relational data integrity, foreign key relations, complex queries, and transactional safety.
+        </p>
+
+        <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-cyan-400 font-bold block mb-1">P</span>
+            PostgreSQL
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-cyan-400 font-bold block mb-1">E</span>
+            Express Backend
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-cyan-400 font-bold block mb-1">R</span>
+            React Interfaces
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-slate-200">
+            <span className="text-cyan-400 font-bold block mb-1">N</span>
+            Node.js API
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+     {/* 5. Interactive Capabilities & Tools Inspector */}
+<section id="skills" className="py-24 relative overflow-hidden bg-slate-950 border-t border-b border-slate-800/50">
+  
+  {/* 🌟 1. ሙያዊ የጀርባ ፎቶ */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100 pointer-events-none"
+    style={{ backgroundImage: `url('/arch.jfif')` }} 
+  />
+
+  {/* 🌟 2. Dark Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/50 to-slate-950 pointer-events-none" />
+
+  {/* 🌟 3. Ambient Blue Glow Background */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+
+  <div className="max-w-6xl mx-auto px-6 relative z-10">
+    
+    <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+      <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400">CORE EXPERTISE</h2>
+      <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
+        Skills & Ecosystem Inspector
+      </h3>
+      <p className="text-slate-400 text-sm">
+        Explore capabilities categorized by stack tier.
+      </p>
+    </div>
+
+    {/* Interactive Category Selector Tabs */}
+    <div className="flex flex-wrap justify-center gap-2 mb-10">
+      {['All', 'Frontend', 'Backend', 'Databases', 'Tools'].map((cat) => (
+        <button
+          key={cat}
+          onClick={() => setActiveTab(cat)}
+          className={`px-5 py-2 rounded-xl text-xs font-bold transition-all ${
+            activeTab === cat 
+              ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' 
+              : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+          }`}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    {/* Grid Display */}
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {Object.entries(techCategories)
+        .filter(([categoryKey]) => activeTab === 'All' || activeTab === categoryKey)
+        .flatMap(([categoryKey, items]) => 
+          items.map((item, idx) => (
+            <div 
+              key={`${categoryKey}-${idx}`} 
+              className="bg-slate-900/90 backdrop-blur-md border border-slate-800 hover:border-slate-700 p-6 rounded-2xl transition group hover:-translate-y-1"
+            >
+              <div className="flex justify-between items-start mb-3">
+                <h4 className="font-bold text-white text-base group-hover:text-blue-400 transition">
+                  {item.name}
+                </h4>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 uppercase tracking-wide">
+                  {categoryKey}
                 </span>
-              </h1>
-
-              <p className="text-slate-300 text-lg sm:text-xl font-light leading-relaxed max-w-2xl">
-                Passionate engineer focused on architecting high-performance web applications using modern <span className="text-blue-400 font-semibold">PHP & SQL</span> ecosystems alongside <span className="text-cyan-400 font-semibold">MERN</span> and <span className="text-indigo-400 font-semibold">PERN</span> full-stack architecture.
-              </p>
-
-              {/* Quick Info Badges */}
-              <div className="flex flex-wrap gap-4 text-xs font-mono text-slate-400 pt-2">
-                <div className="flex items-center gap-2 bg-slate-900/80 px-3.5 py-2 rounded-xl border border-slate-800">
-                  <GraduationCap className="w-4 h-4 text-blue-400" />
-                  <span>Wolaita Sodo University</span>
-                </div>
-                <div className="flex items-center gap-2 bg-slate-900/80 px-3.5 py-2 rounded-xl border border-slate-800">
-                  <Code2 className="w-4 h-4 text-cyan-400" />
-                  <span>PHP & FULLY-JS Web Engineer</span>
-                </div>
               </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-4">
-                <a 
-                  href="#projects" 
-                  className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-7 py-3.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center gap-2 text-sm"
-                >
-                  Explore Work
-                  <ChevronRight className="w-4 h-4" />
-                </a>
-                <a 
-                  href="#contact" 
-                  className="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-bold px-7 py-3.5 rounded-xl transition text-sm"
-                >
-                  Contact Me
-                </a>
-              </div>
-
-              {/* Quick Social Links */}
-              <div className="flex items-center gap-5 pt-6 text-slate-400">
-                <a 
-                  href="https://github.com/tadele-tade" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="hover:text-blue-400 transition p-2 rounded-lg bg-slate-900/50 border border-slate-800 hover:border-slate-700"
-                  title="GitHub Profile"
-                >
-                  <Code2 className="w-5 h-5 text-blue-400"/>
-                </a>
-                <a 
-                  href="https://t.me/Gamchu1" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="hover:text-blue-400 transition p-2 rounded-lg bg-slate-900/50 border border-slate-800 hover:border-slate-700"
-                  title="Telegram Profile"
-                >
-                  <Send className="w-5 h-5" />
-                </a>
-                <a 
-                  href="mailto:tadiwostadele389@gmail.com"
-                  className="hover:text-blue-400 transition p-2 rounded-lg bg-slate-900/50 border border-slate-800 hover:border-slate-700"
-                  title="Direct Email"
-                >
-                  <Mail className="w-5 h-5" />
-                </a>
-                            <a 
-  href="https://github.com/tadele-tade" 
-  target="_blank" 
-  rel="noreferrer"
-  className="hover:text-blue-400 transition p-2 rounded-lg bg-slate-900/50 border border-slate-800 hover:border-slate-700"
-  title="GitHub Profile"
->
-  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-  </svg>
-</a>
-              </div>
-
-            </div>
-            {/* Profile Avatar Card */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="relative">
-                {/* Neon Glow Outer Rings */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl blur-xl opacity-40 animate-pulse"></div>
-                
-                <div className="relative bg-slate-900 border border-slate-800 p-6 rounded-3xl shadow-2xl backdrop-blur-xl max-w-sm">
-                  
-                  {/* Photo Container */}
-                  <div className="relative w-full aspect-square rounded-2xl overflow-hidden mb-6 border border-slate-700/50 group">
-                    <img 
-                      src="/des.jpg" 
-                      alt="Tadele Tadiwos" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.parentElement.classList.add('bg-gradient-to-br', 'from-blue-900', 'to-slate-900', 'flex', 'items-center', 'justify-center');
-                        e.target.parentElement.innerHTML = `<div class="text-center p-4"><span class="text-5xl font-black text-blue-400">TT</span><p class="text-xs text-slate-400 mt-2 font-mono">Tadele Tadiwos</p></div>`;
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
-                  </div>
-
-                  {/* Quick Specs */}
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-xs border-b border-slate-800 pb-2">
-                      <span className="text-slate-400">Primary Focus</span>
-                      <span className="font-mono text-blue-400 font-semibold">PHP / Node.js / SQL</span>
-                    </div>
-                    <div className="flex justify-between items-center text-xs border-b border-slate-800 pb-2">
-                      <span className="text-slate-400">Education</span>
-                      <span className="font-mono text-slate-200">CS @ WSU</span>
-                    </div>
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-slate-400">My Services</span>
-                      <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                        Open to Roles
-                      </span>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 3. About Section */}
-      <section id="about" className="py-24 bg-slate-900/40 relative border-t border-b border-slate-800/50">
-        <div className="max-w-5xl mx-auto px-6">
-          
-          <div className="flex items-center gap-3 mb-6">
-            <User className="w-5 h-5 text-blue-400" />
-            <h2 className="text-xs uppercase tracking-widest font-bold text-blue-400">Development Approach</h2>
-          </div>
-
-          <h3 className="text-3xl sm:text-4xl font-extrabold text-white mb-8 leading-tight">
-            Building Robust, High-Performance Applications across Modern PHP and JavaScript Ecosystems.
-          </h3>
-
-          <div className="grid md:grid-cols-3 gap-8 text-slate-300 leading-relaxed text-sm">
-            <div className="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-4">
-                <Layout className="w-5 h-5" />
-              </div>
-              <h4 className="font-bold text-white mb-2 text-base">Academic Foundation</h4>
-              <p className="text-slate-400 text-xs leading-relaxed">
-                As a Computer Science student at <strong>Wolaita Sodo University</strong>, I combine foundational CS concepts—data structures, software patterns, and system design—with modern web engineering.
+              <p className="text-xs text-slate-400 leading-relaxed">
+                {item.desc}
               </p>
             </div>
+          ))
+        )}
+    </div>
 
-            <div className="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition">
-              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-4">
-                <Server className="w-5 h-5" />
-              </div>
-              <h4 className="font-bold text-white mb-2 text-base">PHP & Relational SQL</h4>
-              <p className="text-slate-400 text-xs leading-relaxed">
-                Specializing in secure backend architectures using <strong>PHP</strong>, <strong>MySQL</strong>, and <strong>PostgreSQL</strong> with focus on prepared statements, transaction integrity, and REST APIs.
-              </p>
-            </div>
-
-            <div className="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition">
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-4">
-                <Cpu className="w-5 h-5" />
-              </div>
-              <h4 className="font-bold text-white mb-2 text-base">Reactive Frontend & MERN</h4>
-              <p className="text-slate-400 text-xs leading-relaxed">
-                Crafting reactive web application interfaces using <strong>React.js and Tailwind CSS</strong>, along with full-stack MERN stack implementations.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 4. Core Stacks Breakdown Section */}
-      <section id="stack" className="py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400">Core Stacks</h2>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
-              Full-Stack Architecture
-            </h3>
-            <p className="text-slate-400 text-sm">
-              Extensive experience with PHP, Relational SQL, and Modern JavaScript stacks.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            
-            {/* PHP & SQL Card */}
-            <div className="relative group bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 p-8 rounded-3xl transition duration-300 shadow-xl overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition"></div>
-              
-              <div className="text-indigo-400 text-xs font-mono font-semibold uppercase tracking-widest mb-2">
-                Relational / Enterprise
-              </div>
-              <h4 className="text-3xl font-extrabold text-white mb-4">PHP & SQL</h4>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Engineered for strict data compliance, financial applications, transaction isolation, and secure relational database architectures.
-              </p>
-
-              <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-indigo-400 font-bold block mb-1">P</span>
-                  PHP 8+ Backend
-                </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-indigo-400 font-bold block mb-1">M</span>
-                  MySQL / Postgres
-                </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-indigo-400 font-bold block mb-1">R</span>
-                  React Frontend
-                </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-indigo-400 font-bold block mb-1">A</span>
-                  RESTful APIs
-                </div>
-              </div>
-            </div>
-            
-
-            {/* MERN Card */}
-            <div className="relative group bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 p-8 rounded-3xl transition duration-300 shadow-xl overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition"></div>
-              
-              <div className="text-blue-400 text-xs font-mono font-semibold uppercase tracking-widest mb-2">
-                Primary NoSQL Stack
-              </div>
-              <h4 className="text-3xl font-extrabold text-white mb-4">MERN Stack</h4>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Ideal for modern, highly dynamic web applications requiring continuous scaling, reactive component architecture, and document-based flexibility.
-              </p>
-
-              <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-blue-400 font-bold block mb-1">M</span>
-                  MongoDB Atlas
-                </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-blue-400 font-bold block mb-1">E</span>
-                  Express.js Router
-                </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-blue-400 font-bold block mb-1">R</span>
-                  React.js Client
-                </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-blue-400 font-bold block mb-1">N</span>
-                  Node.js Server
-                </div>
-              </div>
-            </div>
-
-
-            {/* PERN Card */}
-            <div className="relative group bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 p-8 rounded-3xl transition duration-300 shadow-xl overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition"></div>
-
-              <div className="text-cyan-400 text-xs font-mono font-semibold uppercase tracking-widest mb-2">
-                Node Relational Stack
-              </div>
-              <h4 className="text-3xl font-extrabold text-white mb-4">PERN Stack</h4>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Designed for enterprise platforms requiring strict SQL relational data integrity, foreign key relations, complex queries, and transactional safety.
-              </p>
-
-              <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-cyan-400 font-bold block mb-1">P</span>
-                  PostgreSQL
-                </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-cyan-400 font-bold block mb-1">E</span>
-                  Express Backend
-                </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-cyan-400 font-bold block mb-1">R</span>
-                  React Interfaces
-                </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-slate-300">
-                  <span className="text-cyan-400 font-bold block mb-1">N</span>
-                  Node.js API
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Interactive Capabilities & Tools Inspector */}
-      <section id="skills" className="py-24 bg-slate-900/40 border-t border-b border-slate-800/50">
-        <div className="max-w-6xl mx-auto px-6">
-          
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400">CORE EXPERTISE</h2>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
-              Skills & Ecosystem Inspector
-            </h3>
-            <p className="text-slate-400 text-sm">
-              Explore capabilities categorized by stack tier.
-            </p>
-          </div>
-
-          {/* Interactive Category Selector Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {['All', 'Frontend', 'Backend', 'Databases', 'Tools'].map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveTab(cat)}
-                className={`px-5 py-2 rounded-xl text-xs font-bold transition-all ${
-                  activeTab === cat 
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' 
-                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Grid Display */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Object.entries(techCategories)
-              .filter(([categoryKey]) => activeTab === 'All' || activeTab === categoryKey)
-              .flatMap(([categoryKey, items]) => 
-                items.map((item, idx) => (
-                  <div 
-                    key={`${categoryKey}-${idx}`} 
-                    className="bg-slate-900/90 border border-slate-800 hover:border-slate-700 p-6 rounded-2xl transition group hover:-translate-y-1"
-                  >
-                    <div className="flex justify-between items-start mb-3">
-                      <h4 className="font-bold text-white text-base group-hover:text-blue-400 transition">
-                        {item.name}
-                      </h4>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 uppercase tracking-wide">
-                        {categoryKey}
-                      </span>
-                    </div>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))
-              )}
-          </div>
-
-        </div>
-      </section>
+  </div>
+</section>
 
       {/* 6. Featured Projects with Interactive Filter & Modal */}
       <section id="projects" className="py-24">
