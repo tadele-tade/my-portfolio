@@ -293,7 +293,7 @@ export default function App() {
   <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
   {/* 🌟 A. Background Image */}
   <div 
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 filter blur-[1px]"
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 filter blur-[1px]"
     style={{
       backgroundImage: `url('/profile.jfif')`,
     }}
