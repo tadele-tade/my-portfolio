@@ -295,7 +295,7 @@ export default function App() {
   <div 
     className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 filter blur-[1px]"
     style={{
-      backgroundImage: `url('/profile.jfif')`,
+      backgroundImage: `url('/h.jpg')`,
     }}
   />
   {/* ከጀርባ የሚያበሩ ወጋገኖች (Glowing Orbs) */}
@@ -715,120 +715,134 @@ export default function App() {
   </div>
 </section>
 
-      {/* 6. Featured Projects with Interactive Filter & Modal */}
-      <section id="projects" className="py-24">
-        <div className="max-w-6xl mx-auto px-6">
+     {/* 6. Featured Projects with Interactive Filter & Modal */}
+<section id="projects" className="py-24 relative overflow-hidden bg-slate-950 border-t border-slate-800/50">
+  
+  {/* 🌟 1. Ambient Blue Glow Background */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" />
+
+  <div className="max-w-6xl mx-auto px-6 relative z-10">
+    
+    <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Selected Works</h2>
+        <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
+          Featured Applications
+        </h3>
+      </div>
+
+      {/* Filter Pills */}
+      <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
+        {['All', 'PHP / SQL', 'MERN', 'AI / React'].map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+              activeCategory === cat 
+                ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30' 
+                : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    {/* Projects Grid */}
+    <div className="grid md:grid-cols-2 gap-8">
+      {filteredProjects.map((p, idx) => (
+        <div 
+          key={p.id} 
+          className="group bg-slate-900/80 backdrop-blur-md border border-slate-800/90 hover:border-blue-500/40 p-8 rounded-3xl transition duration-300 flex flex-col justify-between relative overflow-hidden shadow-xl"
+        >
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-            <div>
-              <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Selected Works</h2>
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
-                Featured Applications
-              </h3>
+          {/* 🌟 A. በየሳጥኑ (Card) ውስጥ ብቻ የሚታይ የጀርባ ፎቶ */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 filter blur-[1px] group-hover:scale-105 transition duration-500 pointer-events-none"
+            style={{ backgroundImage: `url(${p.bgImage || '/fu.jpg'})` }} 
+          />
+
+          {/* 🌟 B. ጽሑፎቹ በግልጽ እንዲነበቡ በሳጥኑ ውስጥ ያለ የጥቁር ግራዲየንት ሽፋን */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none" />
+
+          {/* 🌟 C. የካርዱ ይዘት (relative z-10) */}
+          <div className="relative z-10">
+            <div className="flex justify-between items-center mb-4">
+              <span className="text-xs font-mono font-bold text-blue-400 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+                {p.category}
+              </span>
+              <span className="text-xs font-mono text-slate-500 font-bold">
+                0{idx + 1}
+              </span>
             </div>
 
-            {/* Filter Pills */}
-            <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
-              {['All', 'PHP / SQL', 'MERN', 'AI / React'].map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                    activeCategory === cat 
-                      ? 'bg-blue-600 text-white shadow-md' 
-                      : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
-                  }`}
+            <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+              {p.title}
+            </h4>
+
+            <p className="text-xs text-blue-300 font-medium mb-4">
+              {p.tagline}
+            </p>
+
+            <p className="text-slate-400 text-xs leading-relaxed mb-6 line-clamp-3">
+              {p.description}
+            </p>
+
+            {/* Credentials Preview */}
+            {p.credentials && (
+              <div className="mb-6 p-3.5 bg-slate-950/80 border border-slate-800 rounded-xl flex items-center justify-between text-xs font-mono">
+                <span className="text-slate-400 truncate mr-2">{p.credentials}</span>
+                <button 
+                  onClick={() => handleCopy(p.credentials, 'Credentials')}
+                  className="text-blue-400 hover:text-blue-300 shrink-0 p-1"
+                  title="Copy credentials"
                 >
-                  {cat}
+                  {copiedText === 'Credentials' ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                 </button>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {filteredProjects.map((p, idx) => (
-              <div 
-                key={p.id} 
-                className="group bg-slate-900/80 border border-slate-800/90 hover:border-blue-500/40 p-8 rounded-3xl transition duration-300 flex flex-col justify-between relative overflow-hidden shadow-xl"
+          {/* Footer Controls */}
+          <div className="pt-4 border-t border-slate-800/80 space-y-4 relative z-10">
+            <div className="flex flex-wrap gap-1.5">
+              {p.tech.map((t) => (
+                <span key={t} className="text-[10px] font-mono bg-slate-800/80 text-slate-300 px-2.5 py-1 rounded-md">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-3 pt-2">
+              <button 
+                onClick={() => setSelectedProject(p)}
+                className="text-xs font-bold text-slate-200 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-xl transition flex items-center gap-2"
               >
-                
-                <div>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-xs font-mono font-bold text-blue-400 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-                      {p.category}
-                    </span>
-                    <span className="text-xs font-mono text-slate-600 font-bold">
-                      0{idx + 1}
-                    </span>
-                  </div>
+                <span>Architecture Details</span>
+                <Terminal className="w-3.5 h-3.5" />
+              </button>
 
-                  <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                    {p.title}
-                  </h4>
-
-                  <p className="text-xs text-blue-300 font-medium mb-4">
-                    {p.tagline}
-                  </p>
-
-                  <p className="text-slate-400 text-xs leading-relaxed mb-6 line-clamp-3">
-                    {p.description}
-                  </p>
-
-                  {/* Credentials Preview */}
-                  {p.credentials && (
-                    <div className="mb-6 p-3.5 bg-slate-950/70 border border-slate-800 rounded-xl flex items-center justify-between text-xs font-mono">
-                      <span className="text-slate-400 truncate mr-2">{p.credentials}</span>
-                      <button 
-                        onClick={() => handleCopy(p.credentials, 'Credentials')}
-                        className="text-blue-400 hover:text-blue-300 shrink-0 p-1"
-                        title="Copy credentials"
-                      >
-                        {copiedText === 'Credentials' ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                      </button>
-                    </div>
-                  )}
-                </div>
-
-                {/* Footer Controls */}
-                <div className="pt-4 border-t border-slate-800/80 space-y-4">
-                  <div className="flex flex-wrap gap-1.5">
-                    {p.tech.map((t) => (
-                      <span key={t} className="text-[10px] font-mono bg-slate-800/80 text-slate-300 px-2.5 py-1 rounded-md">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center gap-3 pt-2">
-                    <button 
-                      onClick={() => setSelectedProject(p)}
-                      className="text-xs font-bold text-slate-200 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-xl transition flex items-center gap-2"
-                    >
-                      <span>Architecture Details</span>
-                      <Terminal className="w-3.5 h-3.5" />
-                    </button>
-
-                    {p.demoUrl && (
-                      <a 
-                        href={p.demoUrl} 
-                        target="_blank" 
-                        rel="noreferrer"
-                        className="text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-md shadow-blue-600/20"
-                      >
-                        <span>Live Demo</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-              </div>
-            ))}
+              {p.demoUrl && (
+                <a 
+                  href={p.demoUrl} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-md shadow-blue-600/20"
+                >
+                  <span>Live Demo</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+            </div>
           </div>
 
         </div>
-      </section>
+      ))}
+    </div>
+
+  </div>
+</section>
 
       {/* Project Details Terminal Modal */}
       {selectedProject && (
@@ -907,154 +921,167 @@ export default function App() {
         </div>
       )}
 
-      {/* 7. Contact Section */}
-      <footer id="contact" className="py-24 border-t border-slate-800/80 bg-slate-950/60 relative">
-        <div className="max-w-6xl mx-auto px-6">
+     {/* 7. Contact Section */}
+<footer id="contact" className="py-24 border-t border-slate-800/80 bg-slate-950 relative overflow-hidden">
+  
+  {/* 🌟 1. ሙያዊ የጀርባ ፎቶ (Background Image) */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100 filter blur-[1px] pointer-events-none"
+    style={{ backgroundImage: `url('/c.jpg')` }} 
+  />
+
+  {/* 🌟 2. Dark Overlay - ጽሑፎቹ እና ፎርሙ በግልጽ እንዲነበቡ የሚያደርግ የጥቁር ግራዲየንት ሽፋን */}
+  <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/50 to-slate-950 pointer-events-none" />
+
+  {/* 🌟 3. Ambient Blue Glow Background */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+
+  <div className="max-w-6xl mx-auto px-6 relative z-10">
+    
+    <div className="grid lg:grid-cols-12 gap-12">
+      
+      {/* Contact Details */}
+      <div className="lg:col-span-5 space-y-6">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
+          Get In Touch
+        </div>
+
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+          Let's Build Scalable Software Together
+        </h2>
+
+        <p className="text-slate-400 text-sm leading-relaxed">
+          Open for full-time Full-Stack software engineering roles, PHP & SQL backends, MERN/PERN projects, and enterprise web engineering opportunities.
+        </p>
+
+        {/* Direct Info List */}
+        <div className="space-y-4 pt-4 text-sm">
           
-          <div className="grid lg:grid-cols-12 gap-12">
-            
-            {/* Contact Details */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
-                Get In Touch
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-                Let's Build Scalable Software Together
-              </h2>
-
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Open for full-time Full-Stack software engineering roles, PHP & SQL backends, MERN/PERN projects, and enterprise web engineering opportunities.
-              </p>
-
-              {/* Direct Info List */}
-              <div className="space-y-4 pt-4 text-sm">
-                
-                <div 
-                  onClick={() => handleCopy('tadiwostadele389@gmail.com', 'Email')}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-slate-700 cursor-pointer transition group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div className="overflow-hidden">
-                    <div className="text-xs text-slate-400">Email Address</div>
-                    <div className="text-slate-200 font-mono font-medium truncate group-hover:text-blue-400 transition">
-                      tadiwostadele389@gmail.com
-                    </div>
-                  </div>
-                </div>
-
-                <a 
-                  href="https://t.me/Gamchu1" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-slate-700 transition group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
-                    <Send className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-400">Telegram Direct</div>
-                    <div className="text-slate-200 font-mono font-medium group-hover:text-cyan-400 transition">
-                      @Gamchu1
-                    </div>
-                  </div>
-                </a>
-
-                <a 
-                  href="https://github.com/tadele-tade" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-slate-700 transition group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0">
-                    <Code2 className="w-5 h-5"/>
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-400">GitHub Profile</div>
-                    <div className="text-slate-200 font-mono font-medium group-hover:text-indigo-400 transition">
-                      github.com/tadele-tade
-                    </div>
-                  </div>
-                </a>
-
+          <div 
+            onClick={() => handleCopy('tadiwostadele389@gmail.com', 'Email')}
+            className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-800 hover:border-slate-700 cursor-pointer transition group"
+          >
+            <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+              <Mail className="w-5 h-5" />
+            </div>
+            <div className="overflow-hidden">
+              <div className="text-xs text-slate-400">Email Address</div>
+              <div className="text-slate-200 font-mono font-medium truncate group-hover:text-blue-400 transition">
+                tadiwostadele389@gmail.com
               </div>
             </div>
+          </div>
 
-            {/* Interactive Form */}
-            <div className="lg:col-span-7">
-              <div className="bg-slate-900/90 border border-slate-800 p-8 rounded-3xl shadow-xl">
-                
-                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                  <MessageSquare className="w-5 h-5 text-blue-400" />
-                  Send a Direct Message
-                </h3>
-
-                <form onSubmit={handleFormSubmit} className="space-y-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-400 mb-2">Your Name</label>
-                      <input 
-                        type="text" 
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="e.g. Alex Johnson"
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-blue-500 transition"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-400 mb-2">Your Email</label>
-                      <input 
-                        type="email" 
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="alex@company.com"
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-blue-500 transition"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-400 mb-2">Message</label>
-                    <textarea 
-                      rows="4"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Hi Tadele, let's discuss a project or opportunity..."
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-blue-500 transition"
-                    ></textarea>
-                  </div>
-
-                  <button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30 text-sm disabled:opacity-50"
-                  >
-                    {isSubmitting ? (
-                      <span>Sending Message...</span>
-                    ) : (
-                      <>
-                        <span>Submit Message</span>
-                        <Send className="w-4 h-4" />
-                      </>
-                    )}
-                  </button>
-                </form>
-
+          <a 
+            href="https://t.me/Gamchu1" 
+            target="_blank" 
+            rel="noreferrer"
+            className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-800 hover:border-slate-700 transition group"
+          >
+            <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+              <Send className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-xs text-slate-400">Telegram Direct</div>
+              <div className="text-slate-200 font-mono font-medium group-hover:text-cyan-400 transition">
+                @Gamchu1
               </div>
             </div>
+          </a>
 
-          </div>
-
-          {/* Copyright */}
-          <div className="mt-20 pt-8 border-t border-slate-800/80 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4 font-mono">
-            <span>© 2026 Tadele Tadiwos. All Rights Reserved.</span>
-            <span>Computer Science • Wolaita Sodo University</span>
-          </div>
+          <a 
+            href="https://github.com/tadele-tade" 
+            target="_blank" 
+            rel="noreferrer"
+            className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-800 hover:border-slate-700 transition group"
+          >
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0">
+              <Code2 className="w-5 h-5"/>
+            </div>
+            <div>
+              <div className="text-xs text-slate-400">GitHub Profile</div>
+              <div className="text-slate-200 font-mono font-medium group-hover:text-indigo-400 transition">
+                github.com/tadele-tade
+              </div>
+            </div>
+          </a>
 
         </div>
-      </footer>
+      </div>
+
+      {/* Interactive Form */}
+      <div className="lg:col-span-7">
+        <div className="bg-slate-900/90 backdrop-blur-md border border-slate-800 p-8 rounded-3xl shadow-xl">
+          
+          <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <MessageSquare className="w-5 h-5 text-blue-400" />
+            Send a Direct Message
+          </h3>
+
+          <form onSubmit={handleFormSubmit} className="space-y-4">
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-semibold text-slate-400 mb-2">Your Name</label>
+                <input 
+                  type="text" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  placeholder="e.g. Alex Johnson"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-blue-500 transition"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-slate-400 mb-2">Your Email</label>
+                <input 
+                  type="email" 
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="alex@company.com"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-blue-500 transition"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-slate-400 mb-2">Message</label>
+              <textarea 
+                rows="4"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                placeholder="Hi Tadele, let's discuss a project or opportunity..."
+                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-blue-500 transition"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              disabled={isSubmitting}
+              className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30 text-sm disabled:opacity-50"
+            >
+              {isSubmitting ? (
+                <span>Sending Message...</span>
+              ) : (
+                <>
+                  <span>Submit Message</span>
+                  <Send className="w-4 h-4" />
+                </>
+              )}
+            </button>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+    {/* Copyright */}
+    <div className="mt-20 pt-8 border-t border-slate-800/80 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4 font-mono">
+      <span>© 2026 Tadele Tadiwos. All Rights Reserved.</span>
+      <span>Computer Science • Wolaita Sodo University</span>
+    </div>
+
+  </div>
+</footer>
 
     </div>
   );
